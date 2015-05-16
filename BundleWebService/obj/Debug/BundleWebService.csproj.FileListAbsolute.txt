@@ -1,0 +1,12 @@
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\BundleWebService.dll.config
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\BundleWebService.dll
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\BundleWebService.pdb
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\Isab.dll
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\Isab.Interfaces.dll
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\Isab.pdb
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\Isab.xml
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\Isab.Interfaces.pdb
+C:\tfs\Tools\BundleWebService\BundleWebService\bin\Isab.Interfaces.xml
+C:\tfs\Tools\BundleWebService\BundleWebService\obj\Debug\BundleWebService.csprojResolveAssemblyReference.cache
+C:\tfs\Tools\BundleWebService\BundleWebService\obj\Debug\BundleWebService.dll
+C:\tfs\Tools\BundleWebService\BundleWebService\obj\Debug\BundleWebService.pdb

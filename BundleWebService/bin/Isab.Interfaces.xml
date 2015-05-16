@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Isab.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="P:Isab.App.Host.CloseEventArgs.IsCancelAvailable">
+            <summary>
+            Gets a value indicating if Cancel can be used
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.CloseEventArgs.Cancel">
+            <summary>
+            Gets or sets a value indicating if the shutdown should be canceled
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.CloseEventArgs.Reason">
+            <summary>
+            The reason why the program is closing
+            </summary>
+        </member>
+        <member name="T:Isab.Interfaces.App.Host.CloseReasonsEnum">
+            <summary>
+            Varius reasons why the host is closing
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.ApplicationExitCall">
+            <summary>
+            The application is exiting
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.FormOwnerClosing">
+            <summary>
+            Form is closing
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.MdiFormClosing">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.None">
+            <summary>
+            No specifik reason
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.TaskManagerClosing">
+            <summary>
+            Closed by the taskmanager
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.UserClosing">
+            <summary>
+            Closed by the user
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.WindowsShutDown">
+            <summary>
+            Windows is shuttingdown
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.PluginUserClosing">
+            <summary>
+            The user is trying to close a single plugin
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.PluginSystemClosing">
+            <summary>
+            The system is closeing a single plugin, this operation can not be canceled
+            </summary>
+        </member>
+        <member name="F:Isab.Interfaces.App.Host.CloseReasonsEnum.HostRestarting">
+            <summary>
+            The host is restarting this event can not be canceled
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.ICommonSettings.TextEncoding">
+            <summary>
+            Encoding used for texts
+            </summary>
+        </member>
+        <member name="M:Isab.App.Host.IHostManager.Restart">
+            <summary>
+            Restart the host
+            </summary>
+        </member>
+        <member name="M:Isab.App.Host.IHostManager.Exit">
+            <summary>
+            Exit the host
+            </summary>
+        </member>
+        <member name="M:Isab.App.Host.IHostManager.Exit(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Exit the host
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:Isab.App.Host.IHostManager.StatusText">
+            <summary>
+            Gets or sets the hosts current statustext
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IHostManager.ShowSplashScreen">
+            <summary>
+            Gets or sets a value indicating whether to show the splash screen.
+            </summary>
+            <value><c>true</c> if the splash screen should be shown; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:Isab.Configuration.Common.IConfigurationSource">
+            <summary>
+            Defines a configuration source. Used to support different sources for configuration.
+            </summary>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.ValidateSource">
+            <summary>
+            Validates that the configuration source is valid
+            </summary>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.SaveSection(Isab.Configuration.IIsabConfigurationSection,System.String,System.Configuration.ConfigurationSaveMode)">
+            <summary>
+            Saves the section.
+            </summary>
+            <param name="aSection">The section to save.</param>
+            <param name="aSectionName">The name of the section.</param>
+            <param name="aSaveMode">The save mode to use when saving.</param>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.LoadSection``1(System.String,Isab.Configuration.IScope)">
+            <summary>
+            Loads the section.
+            </summary>
+            <param name="aSectionType">The type of the section.</param>
+            <param name="aSectionName">The name of the section.</param>
+            <param name="aCurrentScope">The current scope.</param>
+            <returns>The loaded section.</returns>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.TryLoadSection``1(System.String,Isab.Configuration.IScope,``0@)">
+            <summary>
+            Loads the section.
+            </summary>
+            <param name="aSectionType">The type of the section.</param>
+            <param name="aSectionName">The name of the section.</param>
+            <param name="aCurrentScope">The current scope.</param>
+            <param name="aSection">The loaded section.</param>
+            <returns>True if the section was found</returns>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.DeleteSection(System.String,Isab.Configuration.IScope)">
+            <summary>
+            Deletes the section.
+            </summary>
+            <param name="aSectionName">Name of the section.</param>
+            <param name="aSectionScope">The section scope.</param>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.DoesSectionExists(System.String,Isab.Configuration.IScope)">
+            <summary>
+            Checks if the section exists.
+            </summary>
+            <param name="aSectionName">Name of the section.</param>
+            <param name="aCurrentScope">The current scope.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.GetAllSectionsMetaData">
+            <summary>
+            Gets all sections meta data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.GetSectionMetaData(System.String,Isab.Configuration.IScope)">
+            <summary>
+            Gets the section meta data.
+            </summary>
+            <param name="aSectionName">Name of a section.</param>
+            <param name="aCurrentScope">A current scope.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Isab.Configuration.Common.IConfigurationSource.ListSectionMetaData(System.Type[])">
+            <summary>
+            List all sections of a specified type
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Isab.App.Host.IInjectIPluginHelper">
+            <summary>
+            Injection interface for the IPluginHelper.
+            </summary>
+        </member>
+        <member name="M:Isab.App.Host.IInjectIPluginHelper.InjectIPluginHelper(Isab.App.Host.IPluginHelper)">
+            <summary>
+            Injects an IPluginHelper object instance into the class.
+            </summary>
+            <param name="aHelper">A helper object that contains functionality provided by the host.</param>
+        </member>
+        <member name="T:Isab.App.Host.IPlugin">
+            <summary>
+            Interface used to create a plug-in for the Isab Application Host.
+            </summary>
+        </member>
+        <member name="M:Isab.App.Host.IPlugin.Init">
+            <summary>
+            Called when the plug-in is initialized.
+            </summary>
+            <param name="aParameters">Parameters.</param>
+        </member>
+        <member name="P:Isab.App.Host.IPlugin.Control">
+            <summary>
+            The main user control displayed in the host.
+            </summary>
+            <value>The control.</value>
+        </member>
+        <member name="P:Isab.App.Host.IPlugin.Image">
+            <summary>
+            The image to display in the tab page for this plug-in.
+            </summary>
+            <value>The image.</value>
+        </member>
+        <member name="T:Isab.Log.IInjectLog">
+            <summary>
+            Injector for <see cref="T:Isab.Log.ILog"/> objects.
+            </summary>
+        </member>
+        <member name="M:Isab.Log.IInjectLog.InjectLog(Isab.Log.ILog)">
+            <summary>
+            Injects the log object
+            </summary>
+            <param name="aLog"></param>
+        </member>
+        <member name="M:Isab.App.Host.IPluginHelper.SetVisualStyle(System.Windows.Forms.Control)">
+            <summary>
+            Sets the visual style on the supplied control and all its child controls.
+            </summary>
+            <param name="parent">The control to set the style on.</param>
+            <remarks>The style to set is determined by the implementor.</remarks>
+        </member>
+        <member name="E:Isab.App.Host.IPluginHelper.Closing">
+            <summary>
+            Event fired when the host is closing
+            </summary>
+        </member>
+        <member name="E:Isab.App.Host.IPluginHelper.Message">
+            <summary>
+            Occurs when an message is sent from another plugin.
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.Log">
+            <summary>
+            Provides varius functions related to logging
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.Language">
+            <summary>
+            Provides varius functions related to language
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.Config">
+            <summary>
+            Provides varius functions related to configuration
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.HostManager">
+            <summary>
+            Provides varius functions related to the host
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.ScannerManager">
+            <summary>
+            Provides varius functions related to scanners
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.CommonSettings">
+            <summary>
+            Provides commonly used settings
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.WorkFolder">
+            <summary>
+            The workfolder for the plugin
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IPluginHelper.PluginManager">
+            <summary>
+            Gets the plugin manager.
+            </summary>
+            <value>The plugin manager.</value>
+        </member>
+        <member name="E:Isab.App.Host.IScannerManager.ScannerData">
+            <summary>
+            Event fired on new scannerdata
+            </summary>
+        </member>
+        <member name="P:Isab.App.Host.IScannerManager.Scanners">
+            <summary>
+            Gets or sets the scanners.
+            </summary>
+            <value>The scanners.</value>
+        </member>
+        <member name="P:Isab.App.Host.IScannerManager.Enabled">
+            <summary>
+            Gets and sets the enable state of the scanners
+            </summary>
+        </member>
+        <member name="T:Isab.Configuration.VisualEditing.ConfigurationElementEditorAttribute">
+            <summary>
+            Indicates the configuration editor object type that is used for the attributed object.
+            </summary>
+        </member>
+        <member name="M:Isab.Configuration.VisualEditing.ConfigurationElementEditorAttribute.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Isab.Configuration.VisualEditing.ConfigurationElementEditorAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Isab.Configuration.VisualEditing.ConfigurationElementEditorAttribute.#ctor(System.Type)">
+            <summary>
+            Initialize a new instance of the <see cref="!:ConfigurationElementTypeAttribute"/> class with the configuration editor object type.
+            </summary>
+            <param name="configurationType">The <see cref="T:System.Type"/> of the configuration editor object.</param>
+        </member>
+        <member name="P:Isab.Configuration.VisualEditing.ConfigurationElementEditorAttribute.EditorType">
+            <summary>
+            Gets the <see cref="T:System.Type"/> of the configuration editor object.
+            </summary>
+            <value>
+            The <see cref="T:System.Type"/> of the configuration editor object.
+            </value>
+        </member>
+        <member name="T:Isab.Language.SourceType">
+            <summary>
+            Varius datasources where a language can be read
+            </summary>
+        </member>
+        <member name="F:Isab.Language.SourceType.Xml">
+            <summary>
+            Read language from an XML file
+            </summary>
+        </member>
+        <member name="F:Isab.Language.SourceType.NotSet">
+            <summary>
+            Value not set
+            </summary>
+        </member>
+        <member name="T:Isab.Language.StringCategory">
+            <summary>
+            Defines the different string categorys
+            </summary>
+        </member>
+        <member name="F:Isab.Language.StringCategory.ERROR">
+            <summary>
+            Used for error messages
+            </summary>
+        </member>
+        <member name="F:Isab.Language.StringCategory.WARNING">
+            <summary>
+            Used for warning messages
+            </summary>
+        </member>
+        <member name="F:Isab.Language.StringCategory.MESSAGE">
+            <summary>
+            Used for messages
+            </summary>
+        </member>
+        <member name="F:Isab.Language.StringCategory.OTHER">
+            <summary>
+            Used when no other category applys
+            </summary>
+        </member>
+        <member name="T:Isab.Log.ILog">
+            <summary>
+            Interface that describes an log object
+            </summary>
+        </member>
+        <member name="M:Isab.Log.ILog.AddStream(System.IO.TextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="aTextWriter"></param>
+        </member>
+        <member name="M:Isab.Log.ILog.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Isab.Log.ILog.IsCategoryActive(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="aCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Isab.Log.ILog.IsCategoryActive(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="aCategories"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Isab.Log.ILog.IsLogLevelActive(Isab.Log.LogLevelsEnum)">
+            <summary>
+            
+            </summary>
+            <param name="aLogLevel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Isab.Log.ILog.RemoveStream(System.IO.TextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="aTextWriter"></param>
+        </member>
+        <member name="M:Isab.Log.ILog.Write(System.String,Isab.Log.LogLevelsEnum)">
+            <summary>
+            
+            </summary>
+            <param name="aMessage"></param>
+            <param name="aLogLevel"></param>
+        </member>
+        <member name="M:Isab.Log.ILog.Write(System.String,System.String,Isab.Log.LogLevelsEnum)">
+            <summary>
+            
+            </summary>
+            <param name="aMessage"></param>
+            <param name="aCategory"></param>
+            <param name="aLogLevel"></param>
+        </member>
+        <member name="M:Isab.Log.ILog.Write(System.String,System.String[],Isab.Log.LogLevelsEnum)">
+            <summary>
+            
+            </summary>
+            <param name="aMessage"></param>
+            <param name="aCategories"></param>
+            <param name="aLogLevel"></param>
+        </member>
+        <member name="M:Isab.Log.ILog.Write(System.String,System.String,Isab.Log.LogLevelsEnum,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="aMessage"></param>
+            <param name="aCategory"></param>
+            <param name="aLogLevel"></param>
+            <param name="aException"></param>
+        </member>
+        <member name="M:Isab.Log.ILog.Write(System.String,System.String[],Isab.Log.LogLevelsEnum,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="aMessage"></param>
+            <param name="aCategories"></param>
+            <param name="aLogLevel"></param>
+            <param name="aException"></param>
+        </member>
+        <member name="M:Isab.Log.ILog.Write(System.String,Isab.Log.LogLevelsEnum,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="aMessage"></param>
+            <param name="aLogLevel"></param>
+            <param name="aException"></param>
+        </member>
+        <member name="T:Isab.Log.LogLevelsEnum">
+            <summary>
+            Represents the different log levels that are possible to use.
+            <!-- Author: Niklas Lagergren, 2005-04-19 -->
+            </summary>
+        </member>
+        <member name="F:Isab.Log.LogLevelsEnum.Always">
+            <summary>
+            Used when one always want the log entry to be loged, regardless of the log objects settings.
+            </summary>
+        </member>
+        <member name="F:Isab.Log.LogLevelsEnum.Error">
+            <summary>
+            Used to log critical, unexpected errors.
+            </summary>
+        </member>
+        <member name="F:Isab.Log.LogLevelsEnum.Warning">
+            <summary>
+            Used to log problems that are not that critical.
+            </summary>
+        </member>
+        <member name="F:Isab.Log.LogLevelsEnum.Info">
+            <summary>
+            Used when loging more sparse information, one should be able to have this
+            log level active without having to worry about performance penalties or
+            disk space limits.
+            </summary>
+        </member>
+        <member name="F:Isab.Log.LogLevelsEnum.Input">
+            <summary>
+            Used when loging data/commands that the application receives. Mainly used 
+            for debuging purposes.
+            </summary>
+        </member>
+        <member name="F:Isab.Log.LogLevelsEnum.Output">
+            <summary>
+            Used when loging data/commands that the application sends. Mainly used 
+            for debuging purposes.
+            </summary>
+        </member>
+        <member name="F:Isab.Log.LogLevelsEnum.Debug">
+            <summary>
+            Used when loging really intense amount of information, should only be used
+            when the loging is added just to help find the cause of an unkown problem.
+            </summary>
+        </member>
+        <member name="T:Isab.IO.Scanner.IScanner">
+            <summary>
+            Summary description for IScanner.
+            </summary>
+        </member>
+        <member name="M:Isab.IO.Scanner.IScanner.Initialize(System.Object)">
+            <summary>
+            Initilize the scanner
+            </summary>
+            <param name="aSettings">Object containing the settings for the scanner</param>
+            <returns></returns>
+        </member>
+        <member name="M:Isab.IO.Scanner.IScanner.Write(System.Byte[])">
+            <summary>
+            Writes data to the scanner
+            </summary>
+            <param name="aByteList"></param>
+        </member>
+        <member name="M:Isab.IO.Scanner.IScanner.GetConfigType">
+            <summary>
+            Returns the configuration type used to store settings for the scanner
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Isab.IO.Scanner.IScanner.ScannerData">
+            <summary>
+            Event fired on new scannerdata
+            </summary>
+        </member>
+        <member name="P:Isab.IO.Scanner.IScanner.Id">
+            <summary>
+            Gets or sets the scanners Id value
+            </summary>
+        </member>
+        <member name="P:Isab.IO.Scanner.IScanner.Enable">
+            <summary>
+            Gets or sets the scanners enabled value
+            </summary>
+        </member>
+        <member name="M:Isab.IO.Scanner.IHostScannerConfiguration.Init(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initilize the scannerconfiguration object
+            </summary>
+            <param name="aValueList">Name value list to parse into a configuration object</param>
+        </member>
+        <member name="M:Isab.IO.Scanner.IHostScannerConfiguration.ToDictionary">
+            <summary>
+            Convert the scannerconfiguration object into a name value list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Isab.IO.Scanner.ScannerDataEventArgs">
+            <summary>
+            Summary description for ScannerData.
+            </summary>
+        </member>
+        <member name="P:Isab.IO.Scanner.ScannerDataEventArgs.Id">
+            <summary>
+            The ID of the scanner where this data was recived
+            </summary>
+        </member>
+        <member name="P:Isab.IO.Scanner.ScannerDataEventArgs.Text">
+            <summary>
+            The data that was recived on the scanner
+            </summary>
+        </member>
+        <member name="P:Isab.IO.Scanner.ScannerDataEventArgs.DecoderType">
+            <summary>
+            The code type that was scanned
+            </summary>
+        </member>
+        <member name="T:Isab.IO.Scanner.ScannerDataEventArgs.DecoderTypes">
+            <summary>
+            Varius barcodetypes
+            </summary>
+        </member>
+    </members>
+</doc>
